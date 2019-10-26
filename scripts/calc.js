@@ -1,8 +1,11 @@
-function addition(a, b) {
-    if (isNaN(a) || isNaN(b)) {
-        return 'Error!';
-    }
-    return a + b;
+let Calculator = function() {
+    this.value = 0;
 }
 
-addition(20, 22);
+Calculator.prototype.add = function(number) {
+    if (typeof(number) == 'number') {
+        this.value += 'number';
+    } else {
+        alert('Error!');
+    }
+}
