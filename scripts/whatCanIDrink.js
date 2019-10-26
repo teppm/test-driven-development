@@ -1,21 +1,15 @@
-function whatCanIDrink(age) {
-    if (age < 0 || typeof(age) == 'number') {
+whatCanIDrink = function(age) {
+    if (age < 0) {
         return 'Sorry. I can’t tell what drink because that age is incorrect!'
-    }
-    if (age < 14 || typeof(age) == 'number') {
+    } else if (age < 14) {
         return 'Drink Toddy';
-    }
-    if (age < 18 || typeof(age) == 'number') {
+    } else if (age < 18) {
         return 'Drink Coke';
-    }
-    if (age < 21 || typeof(age) == 'number') {
+    } else if (age < 21) {
         return 'Drink Beer';
-    }
-    if (age < 130 || typeof(age) == 'number') {
+    } else if (age < 130) {
         return 'Drink Whiskey'
     } else {
         return 'Sorry. I can’t tell what drink because that age is incorrect!'
     }
-}
-
-whatCanIDrink(10);
+};
