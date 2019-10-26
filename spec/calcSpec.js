@@ -1,13 +1,24 @@
-describe('calculator', function() {
+describe('Calculator', function() {
+
+    beforeEach(function() {
+        calc = new Calculator;
+    });
+
     describe('addition', function() {
         it('should return 42', function() {
-            expect(addition(20, 22)).toBe(42);
+            calc.add(20);
+            calc.add(22);
+            expect(calc.value).toBe(42);
         })
         it('should return 19', function() {
-            expect(addition(7, 12)).toBe(19);
+            calc.add(7);
+            calc.add(12);
+            expect(calc.value).toBe(19);
         })
         it('should return an error if we dont supply two numbers', function() {
-            expect(addition('hitchhikers', 'guide')).toBe('Error!');
+            spyOn(window, 'alert');
+            calc.add('hitchhikers');
+            expect(window.alert).toHaveBeenCalledWith('Error!');
         })
     })
 })
